@@ -2,5 +2,7 @@
 {
     internal class Game
     {
+        internal void Roll(int pins)
+        { }
     }
 }
