@@ -2,14 +2,18 @@
 {
     internal class Game
     {
-        int score = 0;
+        int[] rolls = new int[21];
+        int currentRoll = 0;
         internal void Roll(int pins)
         {
-            score += pins;
+            rolls[currentRoll++] = pins;
         }
 
         internal int Score()
         {
+            var score = 0;
+            foreach (var rol in rolls)
+                score += rol;
             return score;
         }
     }
