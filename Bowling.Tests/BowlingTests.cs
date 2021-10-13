@@ -22,12 +22,6 @@ namespace Bowling.Tests
 
 
         [TestMethod]
-        public void Roll()
-        {
-            g.Roll(0);
-        }
-
-        [TestMethod]
         public void GutterGame()
         {
             RollMany(20, 0);
