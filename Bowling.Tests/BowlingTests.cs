@@ -5,21 +5,25 @@ namespace Bowling.Tests
     [TestClass]
     public class BowlingTests
     {
+        Game g;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            g = new Game();
+        }
+
         [TestMethod]
         public void CreateGame()
-        {
-            var g = new Game();
-        }
+        { }
 
         [TestMethod]
         public void Roll()
         {
-            var g = new Game();
-
             g.Roll(0);
         }
-        
-        
+
+
         /*
         Rules
             Game has 10 frames
