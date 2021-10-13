@@ -5,6 +5,13 @@ namespace Bowling.Tests
     [TestClass]
     public class BowlingTests
     {
+        [TestMethod]
+        public void CreateGame()
+        {
+            var g = new Game();
+        }
+
+
         /*
         Rules
             Game has 10 frames
