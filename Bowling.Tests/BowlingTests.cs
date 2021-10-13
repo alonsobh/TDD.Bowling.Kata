@@ -11,7 +11,15 @@ namespace Bowling.Tests
             var g = new Game();
         }
 
+        [TestMethod]
+        public void Roll()
+        {
+            var g = new Game();
 
+            g.Roll(0);
+        }
+        
+        
         /*
         Rules
             Game has 10 frames
