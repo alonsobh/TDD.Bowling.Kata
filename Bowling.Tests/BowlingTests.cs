@@ -13,6 +13,14 @@ namespace Bowling.Tests
             g = new Game();
         }
 
+
+        private void RollMany(int rolls, int pins)
+        {
+            for (int i = 0; i < rolls; i++)
+                g.Roll(pins);
+        }
+
+
         [TestMethod]
         public void Roll()
         {
@@ -22,8 +30,7 @@ namespace Bowling.Tests
         [TestMethod]
         public void GutterGame()
         {
-            for (int i = 0; i < 20; i++)
-                g.Roll(0);
+            RollMany(20, 0);
 
             Assert.AreEqual(0, g.Score());
         }
@@ -31,8 +38,7 @@ namespace Bowling.Tests
         [TestMethod]
         public void AllOnes()
         {
-            for (int i = 0; i < 20; i++)
-                g.Roll(1);
+            RollMany(20, 1);
 
             Assert.AreEqual(20, g.Score());
         }
