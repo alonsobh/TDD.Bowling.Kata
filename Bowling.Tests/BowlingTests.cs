@@ -37,6 +37,17 @@ namespace Bowling.Tests
             Assert.AreEqual(20, g.Score());
         }
 
+        [TestMethod]
+        public void OneSpare()
+        {
+            g.Roll(5);
+            g.Roll(5); //Spare
+            g.Roll(3);
+            RollMany(17, 0);
+
+            Assert.AreEqual(16, g.Score());
+        }
+
 
         /*
         Rules
