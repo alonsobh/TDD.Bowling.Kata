@@ -14,10 +14,6 @@ namespace Bowling.Tests
         }
 
         [TestMethod]
-        public void CreateGame()
-        { }
-
-        [TestMethod]
         public void Roll()
         {
             g.Roll(0);
