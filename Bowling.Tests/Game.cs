@@ -15,6 +15,12 @@
             var firstInFrame = 0;
             for (int frame = 0; frame < 10; frame++)
             {
+                if (rolls[firstInFrame] == 10) // strike
+                {
+                    score += 10 + rolls[firstInFrame + 1] + rolls[firstInFrame + 2];
+                    firstInFrame += 1;
+                }
+                else
                 if (IsSpare(firstInFrame))
                 {
                     score += 10 + rolls[firstInFrame + 2];
