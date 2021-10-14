@@ -30,7 +30,7 @@ namespace Bowling.Tests
             Roll(5);
         }
 
-        private void RollStrike() 
+        private void RollStrike()
             => Roll(10);
 
 
@@ -69,6 +69,14 @@ namespace Bowling.Tests
             RollMany(16, 0);
 
             Assert.AreEqual(24, g.Score());
+        }
+
+        [TestMethod]
+        public void PerfectGame()
+        {
+            RollMany(20, 10);
+
+            Assert.AreEqual(300, g.Score());
         }
 
         /*
