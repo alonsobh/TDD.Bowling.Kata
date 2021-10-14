@@ -2,7 +2,6 @@
 
 namespace Bowling.Tests
 {
-    [Ignore]
     [TestClass]
     public class AcceptanceBowlingTest
     {
@@ -30,28 +29,28 @@ namespace Bowling.Tests
             Assert.AreEqual(133, GetScore(game));
         }
 
-        private int GetScore(object game) 
-            => throw new System.NotImplementedException();
+        private int GetScore(Game game)
+            => game.Score();
 
-        private object GetNewGame()
-            => throw new System.NotImplementedException();
+        private Game GetNewGame()
+            => new Game();
 
-        private void RollFrame(int first, int second, object game)
+        private void RollFrame(int first, int second, Game game)
         {
             Roll(first, game);
             Roll(second, game);
         }
 
-        private void RollSpare(int pins, object game)
+        private void RollSpare(int pins, Game game)
         {
             Roll(pins, game);
             Roll(10 - pins, game);
         }
 
-        private void RollStrike(object game)
+        private void RollStrike(Game game)
             => Roll(10, game);
 
-        private void Roll(int pins, object game)
-            => throw new System.NotImplementedException();
+        private void Roll(int pins, Game game)
+            => game.Roll(pins);
     }
 }
