@@ -12,21 +12,24 @@
         internal int Score()
         {
             var score = 0;
-            var i = 0;
+            var firstInFrame = 0;
             for (int frame = 0; frame < 10; frame++)
             {
-                if (rolls[i] + rolls[i + 1] == 10) // spare
+                if (IsSpare(firstInFrame))
                 {
-                    score += 10 + rolls[i + 2];
-                    i += 2;
+                    score += 10 + rolls[firstInFrame + 2];
+                    firstInFrame += 2;
                 }
                 else
                 {
-                    score += rolls[i] + rolls[i + 1];
-                    i += 2;
+                    score += rolls[firstInFrame] + rolls[firstInFrame + 1];
+                    firstInFrame += 2;
                 }
             }
             return score;
         }
+
+        private bool IsSpare(int firstInFrame)
+            => rolls[firstInFrame] + rolls[firstInFrame + 1] == 10;
     }
 }

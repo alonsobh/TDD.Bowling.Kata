@@ -14,10 +14,20 @@ namespace Bowling.Tests
         }
 
 
+        private void Roll(int pins)
+        {
+            g.Roll(pins);
+        }
         private void RollMany(int rolls, int pins)
         {
             for (int i = 0; i < rolls; i++)
-                g.Roll(pins);
+                Roll(pins);
+        }
+
+        private void RollSpare()
+        {
+            Roll(5);
+            Roll(5);
         }
 
 
@@ -40,9 +50,8 @@ namespace Bowling.Tests
         [TestMethod]
         public void OneSpare()
         {
-            g.Roll(5);
-            g.Roll(5); //Spare
-            g.Roll(3);
+            RollSpare();
+            Roll(3);
             RollMany(17, 0);
 
             Assert.AreEqual(16, g.Score());
