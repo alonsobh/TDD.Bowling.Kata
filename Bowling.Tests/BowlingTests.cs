@@ -37,7 +37,6 @@ namespace Bowling.Tests
             Assert.AreEqual(20, g.Score());
         }
 
-        [Ignore]
         [TestMethod]
         public void OneSpare()
         {
