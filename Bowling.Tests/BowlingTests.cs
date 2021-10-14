@@ -30,6 +30,9 @@ namespace Bowling.Tests
             Roll(5);
         }
 
+        private void RollStrike() 
+            => Roll(10);
+
 
         [TestMethod]
         public void GutterGame()
@@ -60,14 +63,13 @@ namespace Bowling.Tests
         [TestMethod]
         public void OneStrike()
         {
-            Roll(10); //strike
+            RollStrike();
             Roll(3);
             Roll(4);
             RollMany(16, 0);
 
             Assert.AreEqual(24, g.Score());
         }
-
 
         /*
         Rules
